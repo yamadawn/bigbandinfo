@@ -1,3 +1,4 @@
+truncate prefecture;
 insert into prefecture(
 	prefecture_id,				
 	prefecture_name,				
@@ -15,14 +16,14 @@ insert into prefecture(
 (	10	,	'群馬県'	,	false	),
 (	11	,	'埼玉県'	,	false	),
 (	12	,	'千葉県'	,	false	),
-(	13	,	'東京都」'	,	false	),
-(	14	,	'神奈川県'	,	false	),
+(	13	,	'東京都' ,	false	),
+(	14	,	'神奈川県',	false	),
 (	15	,	'新潟県'	,	false	),
 (	16	,	'富山県'	,	false	),
 (	17	,	'石川県'	,	false	),
 (	18	,	'福井県'	,	false	),
 (	19	,	'山梨県'	,	false	),
-(	20	,	'長野県'	,	false),
+(	20	,	'長野県'	,	false	),
 (	21	,	'岐阜県'	,	false	),
 (	22	,	'静岡県'	,	false	),
 (	23	,	'愛知県'	,	false	),
@@ -32,7 +33,7 @@ insert into prefecture(
 (	27	,	'大阪府'	,	false	),
 (	28	,	'兵庫県'	,	false	),
 (	29	,	'奈良県'	,	false	),
-(	30	,	'和歌山県'	,	false	),
+(	30	,	'和歌山県',	false	),
 (	31	,	'鳥取県'	,	false	),
 (	32	,	'島根県'	,	false	),
 (	33	,	'岡山県'	,	false	),
@@ -48,5 +49,5 @@ insert into prefecture(
 (	43	,	'熊本県'	,	false	),
 (	44	,	'大分県'	,	false	),
 (	45	,	'宮崎県'	,	false	),
-(	46	,	'鹿児島県'	,	false	),
-(	47	,	'沖縄県'	,	false	)
+(	46	,	'鹿児島県',	false	),
+(	47	,	'沖縄県'	,	false	);
