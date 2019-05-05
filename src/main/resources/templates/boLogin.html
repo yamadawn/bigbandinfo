@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="../img/favicon.jpg">
+</head>
+<body>
+
+	<form method="post" action="/boTop" th:object="${form}">
+		<p th:text="${message}"></p>
+		<input type="text" id ="loginId" th:value="${form.getLoginId()}" th:field="*{loginId}" placeholder="ログインID">
+		<input type="password" id ="password" th:value="${form.getPassword()}" th:field="*{password}" placeholder="パスワード">
+		
+		<input type="submit" value="ログイン">
+	</form>
+	
+</body>
+</html>

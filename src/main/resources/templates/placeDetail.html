@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="../img/favicon.jpg">
+</head>
+<body>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" id=1 href="../css/import.css" type="text/css"
+		media="all">
+		
+	<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js?ver=2.1.3"></script>
+
+	<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="../js/jquery.smoothScroll.js"></script>
+	<script type="text/javascript" src="../js/slideout.js"></script>
+	<script type="text/javascript" src="../js/effects.js"></script>
+	<script type="text/javascript" src="../js/front.min.js"></script>
+	<script type="text/javascript" src="../js/picturefill.min.js"></script>
+	<script type="text/javascript" src="../js/wp-embed.min.js"></script>
+
+	<div th:include="/common.html::slideout-menu"></div>
+
+
+	<div id="panel" class="slideout-panel slideout-panel-left">
+
+
+		<header th:include="/common.html::top"></header>
+		<main class="top">
+		<div class="content">
+			<div class="content-column2">
+				<div class="main-content">
+					<div class="a-phase sp-hide"></div>
+				</div>
+				<aside></aside>
+			</div>
+		</div>
+		</main>
+
+		<section id="article" class="bb sp-bb">
+			<p class="heading-lv01 tac sp-fs17"
+				style="font-size: 20px"
+				th:text="${place.placeName}"></p>
+			<img src="../img/IMG_1559-170x150.jpg">
+			<table class="placeTable" border="1">
+				<tr>
+					<td>所在地</td>
+					<td colspan="1"><p th:text="${place.address}"></p></td>
+				</tr>
+				<tr>
+					<td>近くの駅</td>
+					<td colspan="2"><p th:each="station : ${stationList}"
+							th:text="${station.staionName}"></p></td>
+				</tr>
+				<tr>
+					<td>wifi</td>
+					<td th:if="${place.wifiFlg}">
+						<p>あり</p>
+					</td>
+					<td th:if="${!place.wifiFlg}">
+						<p>なし</p>
+					</td>
+				</tr>
+				<tr>
+					<td>その他</td>
+					<td><p th:text="${place.memo}"></p></td>
+				</tr>
+			</table>
+			<br>
+			<div class="btn-block m-lr-20">
+				<p class="btn">
+					<a href="#" th:text="${place.placeName}+の公式サイトへ"></a>
+				</p>
+			</div>
+		</section>
+		<div class="pagetop-block">
+			<ul class="sns-list"></ul>
+			<div class="page-top">
+				<a href="#">サイトの一番上へ</a>
+			</div>
+		</div>
+		<div th:include="/common.html::footer"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+
+	<div th:fragment="slideout-menu">
+		<nav id="menu" class="slideout-menu slideout-menu-left">
+			<p class="nav-title">エリアから探す</p>
+			<ul class="area-list">
+				<li><a href="/areaList">全国</a></li>
+				<li><a href="/areaList">北海道</a></li>
+				<li><a href="/areaList">東北</a></li>
+				<li><a href="/areaList">北関東</a></li>
+				<li><a href="/areaList">首都圏</a></li>
+			</ul>
+			<p class="nav-title">演奏を聴く</p>
+			<ul class="cat-list">
+				<li><a href="/bandList/1" class="tourism">アマチュア</a></li>
+				<li><a href="/bandList/2" class="stay">プロ</a></li>
+				<li><a href="/bandList/3" class="eat">レジェンド</a></li>
+			</ul>
+			<p class="nav-title">楽譜を探す</p>
+			<ul class="cat-list">
+				<li><a href="/searchScore" class="searchScore">楽譜を検索する</a></li>
+				<li><a href="/transcription" class="orderScore">採譜を依頼する</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<header th:fragment="top">
+		
+		<div class="toggle-button menuWrapper">
+			<a href="#menu" id="menuButton"></a> <span> <img
+				src="../img/sp-menu.png" width="100" height="100">
+			</span>
+		</div>
+		<div class="inner">
+
+			<h1 class="logo" id="logoImg">
+				<a href="/"><img
+					src="../img/logo.png"
+					width="132" height="32" alt="BIGBAND"></a>
+			</h1>
+		</div>
+	</header>
+
+	<div th:fragment="footer">
+		<footer>
+			<ul class="f-nav">
+				<li><a href="/contact">お問い合わせはこちら</a></li>
+				<li><a href="/aboutUs">このサイトについて</a></li>
+			</ul>
+			<p class="copyright">2019 BIG BAND INFO</p>
+		</footer>
+	</div>
+
+</body>
+</html>

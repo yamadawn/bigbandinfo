@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head></head>
+<body>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet"
+		type="text/css">
+	<link rel="stylesheet" href="../css/style.css">
+
+	<div id="topuncher"></div>
+
+	<header id="header">
+
+		<div id="header_pc" class="clearfix container scroll fadein">
+			<a href="#" class="for-sp"><img src="../image/logo_w.png" width="100" alt="本日より家具の展示販売を行います。"
+				style="margin-left: 1 float: left;"></a>
+
+			<nav>
+				<ul class="header-list">
+					<li><a href="#"><img src="../image/logo_w.png" width="120" alt="本日より家具の展示販売を行います。"></a></li>
+					<li><a href="#"><span class="text">ABOUT US</span></a></li>
+					<li><a href="#"><span class="text">MEMBER</a></li>
+					<li><a href="#"><span class="text">CONTENT</a></li>
+					<li><a href="#"><span class="text">HISTORY</a></li>
+					<li><a href="#"><span class="text">NEWS</a></li>
+					<li><a href="#"><span class="text">CONTACT</a></li>
+					<li class="sns" style="width: 5.0%;"><a
+						href="https://www.instagram.com/tokyo_bay_jazz_weekend/" target="_blank"><img
+							src="../image/insta.png" width="25" alt="公式TokyoBayJazzWeekend INSTAGRAM"></a></li>
+					<li class="sns" style="width: 5.0%;"><a href="https://twitter.com/bay_jazz_band"
+						target="_blank"><img src="../image/twitter_icon.png" width="25" alt="ツイッター"></a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="header_sp">
+			<div class="icon-animation">
+				<span class="top"></span> <span class="middle"></span> <span class="bottom"></span>
+			</div>
+
+			<nav id="global_nav_sp" style="display: none;">
+				<ul>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">MEMBER</a></li>
+					<li><a href="#">CONTENT</a></li>
+					<li><a href="#">HISTORY</a></li>
+					<li><a href="#">NEWS</a></li>
+					<li><a href="#">CONTACT</a></li>
+					<li class="sns"><a href="https://www.instagram.com/tokyo_bay_jazz_weekend" target="_blank"><img
+							src="../image/insta_black.png" width="25" alt="公式TokyoBayJazzWeekend INSTAGRAM">
+							Instagram</a></li>
+					<li class="sns"><a href="https://twitter.com/bay_jazz_band" target="_blank"><img
+							src="../image/twitter_icon_b.png" width="25" alt="ツイッター"> Twitter</a></li>
+				</ul>
+			</nav>
+		</div>
+
+	</header>
+
+
+	<div id="black_box_sp" style="display: none;"></div>
+	<div id="black_box_pc"></div>
+
+
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../js/jquery.matchHeight-min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(
+				function() {
+					$('.height-box').matchHeight();
+					//スマホのメニュー開閉
+					$(".icon-animation,#black_box_sp,#global_nav_sp ul a")
+							.click(function() {
+								$('#global_nav_sp').slideToggle("fast");
+								$("#black_box_sp").fadeToggle("linear");
+								$(".icon-animation").toggleClass("is-open");
+							});
+				});
+	</script>
+	<script src="../js/jquery.bxslider.min.js"></script>
+	<script>
+		$(document).ready(
+				function() {
+					hsize = $(window).height();
+					$(".bx-wrapper,#top .bxslider li,#top_main").css("height",
+							hsize + "px");
+
+					$('.bxslider').bxSlider({
+						mode : 'fade',
+						speed : 1000,
+						pause : 6000,
+						auto : true,
+						pager : false,
+						controls : false
+					});
+				});
+
+		$(window).resize(
+				function() {
+					hsize = $(window).height();
+					$(".bx-wrapper,#top .bxslider li,#top_main").css("height",
+							hsize + "px");
+				});
+	</script>
+	<script src="../js/skrollr.min.js"></script>
+</body>
+</html>

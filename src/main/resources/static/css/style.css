@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* Reset
+------------------------------------------------------------*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+address, em, strong, th {
+  font-style: normal;
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+}
+
+hr, legend {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+img, fieldset {
+  border: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* フロート
+------------------------------------------------------------*/
+.float_l {
+  float: left;
+}
+
+.float_r {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+/* for WP */
+#wpadminbar {
+  -ms-filter: "alpha( opacity=$number*100 )";
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#wpadminbar:hover {
+  -ms-filter: "alpha( opacity=$number*100 )";
+  filter: alpha(opacity=100);
+  opacity: 1;
+}

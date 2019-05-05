@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>記事編集画面</title>
+</head>
+<body>
+	<h1>記事内容編集</h1>
+	<form method="post" action="/boRegistArticle" th:object="${form}">
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>タイトル</th>
+				<th>概要</th>
+				<th>詳細</th>
+				<th>更新日</th>
+				<th>削除フラグ</th>
+			</tr>
+			<tr>
+				<td th:text="${articleId}"></td>
+				<td><textarea rows="10" class="form-control" id="title" name="title" th:field="*{title}"></textarea></td>
+				<td><textarea rows="10" cols="80" class="form-control" id="title" name="title" th:field="*{overview}"></textarea></td>
+				<td><textarea rows="10" cols="80" class="form-control" id="title" name="title" th:field="*{content1}"></textarea></td>
+				<td><input type="date" class="form-control" id="title" name="title" th:field="*{instYmd}" /></td>
+				<td><input type="text" class="form-control" id="title" name="title" th:field="*{delFlg}" /></td>
+			</tr>
+		</table>
+
+		<input type="submit" value="確定" style="margin: 10px; font-size: 15px;">
+	</form>
+
+</body>
+</html>

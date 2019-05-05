@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="../img/favicon.jpg">
+</head>
+<body>
+	<p th:text="${message}"></p>
+	<table border="1">
+		<tr>
+			<th>No.</th>
+			<th>スタジオ名</th>
+			<th>場所</th>
+			<th>評価1</th>
+			<th>評価2</th>
+			<th>評価3</th>
+			<th>評価4</th>
+			<th>評価5</th>
+			<th>評価6</th>
+			<th>説明</th>
+			
+			<th></th>
+		</tr>
+		<tr th:each="place : ${list}">
+		    <td th:text="${place.placeId}"></td>
+		    <td th:text="${place.placeName}"></td>
+		    <td th:text="${place.address}"></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td><input type="button" class="edit" value="編集"></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>記事一覧</title>
+<link rel="shortcut icon" href="../img/favicon.jpg">
+</head>
+<body>
+	<h1>記事一覧</h1>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>タイトル</th>
+			<th>概要</th>
+			<th>更新日</th>
+			<th>削除フラグ</th>
+			<th></th>
+		</tr>
+		<tr th:each="content:${contents}">
+			<td th:text="${content.articleId}"></td>
+			<td th:text="${content.title}"></td>
+			<td th:text="${content.overview}" style="font-size:75%;"></td>
+			<td th:text="${content.instYmd}"></td>
+			<td th:text="${content.delFlg}"></td>
+			<td><a th:href="@{'/boEditArticle/' + ${content.articleId}}">編集</a></td>
+		</tr>
+		
+	</table>
+	<button id="new">新規作成</button>
+
+</body>
+</html>

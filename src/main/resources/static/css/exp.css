@@ -1,0 +1,32 @@
+.goPlaceResearch{
+	margin-top:10px;	
+}
+
+.line{
+	margin-left:10px;
+}
+.areaOpen{
+	display:block;
+}
+.areaClose{
+	display:none;
+}
+.railwayCheck{
+	float:left;
+}
+
+@media screen and (min-width: 661px){
+	
+	header{
+		margin-bottom: 30px;
+	}
+}
+
+.commingSoon{
+	font-size:15px;
+	text-align:center;
+}
+.commingSoon {
+	font-size:15px;
+	text-align:center;
+}

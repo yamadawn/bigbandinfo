@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>エリアを選択</title>
+<link rel="shortcut icon" href="../img/favicon.jpg">
+</head>
+<body>
+
+
+
+	<link rel="stylesheet" id=1 href="css/import.css" type="text/css" media="all">
+
+	<div th:include="/common.html::inner"></div>
+	<main class="top">
+	<div class="content">
+		<div class="content-column2">
+			<aside>
+				<div class="a-phase">
+					<p class="heading-lv01 tac sp-fs17">エリアを選択</p>
+					<ul class="cat-list sp-column3">
+						<li><a href="">東北</a></li>
+						<li><a href="">東京</a></li>
+						<li><a href="">千葉</a></li>
+						<li><a href="">埼玉</a></li>
+						<li><a href="">神奈川</a></li>
+						<li><a href="">その他</a></li>
+					</ul>
+				</div>
+			</aside>
+
+			<aside>
+				<div class="a-phase">
+					<p class="heading-lv01 tac sp-fs17 railways">路線から探す</p>
+					<ul class="cat-list sp-column2">
+						<li th:each="railway : ${railwayList}">
+							<a th:text="${railway.railwayName}"></a>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+		</div>
+	</div>
+	</main>
+
+	<div th:include="/common.html::footer"></div>
+
+</body>
+</html>

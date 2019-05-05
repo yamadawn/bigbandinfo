@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>場所一覧</title>
+</head>
+<body>
+	<h1>場所一覧</h1>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>名称</th>
+			<th>住所</th>
+			<th>区分</th>
+			<th>その他メモ</th>
+			<th>wifi有無</th>
+		</tr>
+		<tr th:each="content:${contents}">
+			<td th:text="${content.placeId}"></td>
+			<td th:text="${content.placeName}"></td>
+			<td th:text="${content.address}"></td>
+			<td th:text="${content.placeClsf}"></td>
+			<td th:text="${content.memo}"></td>
+			<td th:text="${content.wifiFlg}"></td>
+		</tr>
+	</table>
+
+	<div th:fragment='paginationbar'>
+		<ul>
+			<li th:class="${page.first} ? 'disabled':''" style="display: inline"><span
+				th:if="${page.first}">←先頭</span> <a th:if="${not page.first}" th:href="@{${url}(page=0)}">←先頭</a>
+			</li>
+			<li th:each='i : ${#numbers.sequence(0, page.totalPages-1)}'
+				th:class="(${i}==${page.number})? 'active' : ''" style="display: inline"><span
+				th:if='${i}==${page.number}' th:text='${i+1}'>1</span> <a th:if='${i}!=${page.number}'
+				th:href="@{${url}(page=${i})}"> <span th:text='${i+1}'>1</span>
+			</a></li>
+			<li th:class="${page.last} ? 'disabled':''" style="display: inline"><span
+				th:if="${page.last}">末尾➝</span> <a th:if="${not page.last}"
+				th:href="@{${url}(page=(${page.totalPages}-1))}">末尾➝</a></li>
+		</ul>
+	</div>
+	<form method="post" action="/boTop" th:object="${form}">
+		<input type="submit" value="戻る">
+	</form>
+
+</body>
+</html>

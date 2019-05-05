@@ -1,0 +1,26 @@
+/* CSS Document */
+/* main top
+------------------------------------------------------------*/
+main.top #article .article-list li:last-of-type {
+  border-bottom: none;
+}
+
+@media screen and (min-width: 661px) and (max-width: 1080px) {
+  /* main top
+------------------------------------------------------------*/
+}
+
+/*sp*/
+@media screen and (max-width: 660px) {
+  /* main top
+------------------------------------------------------------*/
+  main.top #article .article-list li {
+    padding: 15px;
+  }
+  main.top #article .article-list li:last-child {
+    border: none;
+  }
+  main.top #article .btn-block {
+    margin-bottom: 0;
+  }
+}
