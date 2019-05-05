@@ -190,7 +190,7 @@ public class BigBandController {
 		Article article = articleService.findAllById(articleId);
 		model.addAttribute("article", article);
 
-		return "commingSoon";
+		return "articleDetail";
 	}
 	//記事もっと見る
 	@RequestMapping(value = "/articleList", method = RequestMethod.GET)
