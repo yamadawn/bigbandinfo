@@ -106,15 +106,13 @@ public class BackOfficeController {
 	private String boEditArticle(@ModelAttribute ArticleForm form, @PathVariable int articleId, Pageable pageable, Model model) {
 
 		Article article = articleService.findAllById(articleId);
-		if (article != null) {
-
-			form = copyTopForm(article);
-		}
-		model.addAttribute("article", article);
-		model.addAttribute("form", form);
+//		article.setInstYmd(article.getInstYmd().toString());
+		
+		model.addAttribute("form", article);
 		return "boEditArticle";
 	}
 
+	// コピーメソッド（なくてもやる方法ありそう）
 	private ArticleForm copyTopForm(Article article) {
 
 		ArticleForm form = new ArticleForm();
@@ -130,7 +128,7 @@ public class BackOfficeController {
 		form.setImgUrl3(article.getImgUrl3());
 		form.setImgUrl4(article.getImgUrl4());
 		form.setImgUrl5(article.getImgUrl5());
-		form.setInstYmd(article.getInstYmd());
+//		form.setInstYmd(article.getInstYmd());
 		form.setTitle(article.getTitle());
 		form.setOverview(article.getOverview());
 		return form;
@@ -139,11 +137,19 @@ public class BackOfficeController {
 
 	// 記事登録処理、一覧への遷移
 	@RequestMapping(value = "/boRegistArticle", method = RequestMethod.POST)
-	private String boRegistArticle(@ModelAttribute ArticleForm form, Pageable pageable, Model model) {
-		articleService.updateArticle(form);
-
+	private String boRegistArticle(@ModelAttribute Article article, Pageable pageable, Model model) {
+		try {
+			System.out.println("更新処理開始" + article.getOverview());
+			articleService.updateArticle(article);
+			System.out.println("更新処理終了");
+		
+		} catch (Exception e) {
+			return "boError";
+		}
+		model.addAttribute("message", "更新完了しました。");
 		return boArticleList(pageable, model);
 	}
+	
 
 	// ログイン画面初期表示
 	@RequestMapping(value = "/boLogin", method = RequestMethod.GET)

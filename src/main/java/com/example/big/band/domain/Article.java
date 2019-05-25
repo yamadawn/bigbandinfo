@@ -51,9 +51,6 @@ public class Article {
 	private Date instYmd;
 	@Column
 	private boolean delFlg;
-	
-	
-	@NotNull
 	public int getArticleId() {
 		return articleId;
 	}
@@ -144,8 +141,5 @@ public class Article {
 	public void setDelFlg(boolean delFlg) {
 		this.delFlg = delFlg;
 	}
-	
-	
-
 	
 }

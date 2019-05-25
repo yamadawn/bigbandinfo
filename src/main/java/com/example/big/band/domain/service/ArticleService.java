@@ -1,6 +1,7 @@
 package com.example.big.band.domain.service;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,8 +58,13 @@ public class ArticleService {
         return repository.findAllById(id);
     }
     
-    public void updateArticle(ArticleForm form) {
+    public void updateArticle(Article condition) throws ParseException {
+//    	
+//    	SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+//    	Date formattedInstYmd = sdf.parse(condition.getInstYmd());
+//    	condition.setInstYmd(formattedInstYmd);
     	
+    	repository.save(condition);
     };
     	
 	@Bean

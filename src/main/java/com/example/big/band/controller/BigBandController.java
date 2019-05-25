@@ -119,19 +119,22 @@ public class BigBandController {
 				targetForSelect.add(lineCode);
 			}
 		}
-
+		
+		
 		// 検索処理
-		List<Place> placelist = new ArrayList<Place>();
+		List<Place> placeList = new ArrayList<Place>();
 		
 		for (String code : targetForSelect) {
 			List<Place> tmpList = placeService.findByStationCode(code);
 			
 			for (Place p : tmpList) {
-				placelist.add(p);
+				placeList.add(p);
 			}	
 		}
 		
-		model.addAttribute("placeList", placelist);
+		
+		
+		model.addAttribute("placeList", placeList);
 
 //		Railway railway = railwayService.getOne("101");
 //		System.out.println(railway.getRailwayName());
@@ -195,6 +198,7 @@ public class BigBandController {
 	//記事もっと見る
 	@RequestMapping(value = "/articleList", method = RequestMethod.GET)
 	private String goArticleList(Model model) {
+		
 		return "commingSoon";
 	}
 
