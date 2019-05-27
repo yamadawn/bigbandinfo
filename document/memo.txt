@@ -1,0 +1,9 @@
+
+＜postgresに接続＞
+heroku pg:psql
+
+＜gitリポジトリからローカルディレクトリに取り込む＞
+git pull
+
+＜設定済みのローカルディレクトリをherokuにデプロイ & 起動＞
+git push heroku master
